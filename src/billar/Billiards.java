@@ -55,7 +55,10 @@ public class Billiards extends JFrame {
 	}
 
 	private void initBalls() {
-		// TODO init balls
+		Ball balls[]=new Ball[N_BALL];
+		for(int i=0;i<balls.length;i++) {
+			balls[i]=new Ball();
+		}
 	}
 
 	private class StartListener implements ActionListener {

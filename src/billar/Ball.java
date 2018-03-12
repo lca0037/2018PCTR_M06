@@ -3,7 +3,7 @@ package billar;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 //TODO Transform the code to be used safely in a concurrent context.  
-public class Ball {
+public class Ball implements Runnable{
        //TODO  Find an archive named Ball.png 
 	private String Ball = "Ball.png"; 
 
@@ -84,6 +84,12 @@ public class Ball {
 
 	public Image getImage() {
 		return image;
+	}
+
+	@Override
+	public void run() {
+		
+		
 	}
 
 }
