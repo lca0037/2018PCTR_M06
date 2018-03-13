@@ -25,6 +25,7 @@ public class Ball{
 		y = Billiards.Height/2-16;
 		v = 5;
 		fi =  Math.random() * Math.PI * 2;
+		assert y>Board.TOPBOARD && y<Board.BOTTOMBOARD && x>Board.LEFTBOARD && x<Board.RIGHTBOARD: "INV: La bola debe de estar siempre dentro del tablero";
 	}
 
 	public synchronized void move() {
@@ -41,6 +42,7 @@ public class Ball{
 		reflect();
 		
 		//TODO Check postcondition
+		assert y>Board.TOPBOARD && y<Board.BOTTOMBOARD && x>Board.LEFTBOARD && x<Board.RIGHTBOARD: "INV: La bola debe de estar siempre dentro del tablero";
 	}
 
 	private void reflect() {
@@ -76,10 +78,12 @@ public class Ball{
 
 	public synchronized void setX(double x) {
 		this.x = x;
+		assert x>Board.LEFTBOARD && x<Board.RIGHTBOARD: "INV: La bola debe de estar siempre dentro del tablero";
 	}
 
 	public synchronized void setY(double y) {
 		this.y = y;
+		assert y>Board.TOPBOARD && y<Board.BOTTOMBOARD: "INV: La bola debe de estar siempre dentro del tablero";
 	}
 
 	public Image getImage() {
