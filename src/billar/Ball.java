@@ -27,7 +27,7 @@ public class Ball{
 		fi =  Math.random() * Math.PI * 2;
 	}
 
-	public void move() {
+	public synchronized void move() {
 		v = v*Math.exp(-v/1000);
 		dx = v*Math.cos(fi);
 		dy = v*Math.sin(fi);
@@ -74,11 +74,11 @@ public class Ball{
 		return Math.sqrt(dx*dx+dy*dy);
 	}
 
-	public void setX(double x) {
+	public synchronized void setX(double x) {
 		this.x = x;
 	}
 
-	public void setY(double y) {
+	public synchronized void setY(double y) {
 		this.y = y;
 	}
 
