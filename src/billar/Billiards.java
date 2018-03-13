@@ -61,6 +61,7 @@ public class Billiards extends JFrame {
 		for(int i=0;i<balls.length;i++) {
 			balls[i]=new Ball();
 		}
+		board.setBalls(balls);
 	}
 
 	private class StartListener implements ActionListener {
