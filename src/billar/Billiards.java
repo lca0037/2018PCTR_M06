@@ -82,7 +82,12 @@ public class Billiards extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when stop button is pushed
-
+			if(hilos!=null) {
+				for(int i = 0; i<N_BALL;i++) {
+					hilos[i].interrupt();
+				}
+				hilos=null;
+			}
 		}
 	}
 
